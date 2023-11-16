@@ -40,6 +40,11 @@ class PessoaRepositoryTest {
 
 	DadosPessoaTeste factory = new DadosPessoaTeste();
 
+	@BeforeAll
+	void start() {
+		repository.deleteAll();
+	}
+
 	@Test
 	@Order(1)
 	@DisplayName("Persistencia com sucesso.")

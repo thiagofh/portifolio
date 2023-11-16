@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83e99fd6-f3ef-4ab2-a341-33066e756943" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portifolio/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/portifolio/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portifolio/src/main/java/br/com/portifolio/model/Membro.java" beforeDir="false" afterPath="$PROJECT_DIR$/portifolio/src/main/java/br/com/portifolio/model/Membro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portifolio/src/main/java/br/com/portifolio/model/Projeto.java" beforeDir="false" afterPath="$PROJECT_DIR$/portifolio/src/main/java/br/com/portifolio/model/Projeto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portifolio/src/main/java/br/com/portifolio/model/enums/ClassificacaoRiscoEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/portifolio/src/main/java/br/com/portifolio/model/enums/ClassificacaoRiscoEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portifolio/src/main/java/br/com/portifolio/model/enums/StatusProjetoEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/portifolio/src/main/java/br/com/portifolio/model/enums/StatusProjetoEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portifolio/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/portifolio/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="83e99fd6-f3ef-4ab2-a341-33066e756943" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
