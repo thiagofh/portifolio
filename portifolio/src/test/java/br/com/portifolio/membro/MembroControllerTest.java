@@ -82,7 +82,7 @@ class MembroControllerTest {
     void adicionarNovoMembro() {
         Membro membro = new Membro();
         membro.getId().setIdPessoa(1L);
-        membro.getId().setIdPessoa(1L);
+        membro.getId().setIdProjeto(1L);
         when(membroService.salvarMembro(membro)).thenReturn(membro);
 
         ResponseEntity<Membro> responseEntity = membroController.adicionarMembro(membro);
@@ -105,7 +105,7 @@ class MembroControllerTest {
     private Membro criarMembroNaBase() {
         Membro membro = new Membro();
         membro.getId().setIdPessoa(1L);
-        membro.getId().setIdPessoa(1L);
+        membro.getId().setIdProjeto(1L);
 
         Membro membroSalvo = membroService.salvarMembro(membro);
 
