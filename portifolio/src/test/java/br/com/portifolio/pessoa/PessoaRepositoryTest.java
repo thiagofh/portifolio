@@ -1,14 +1,16 @@
 package br.com.portifolio.pessoa;
 
-import br.com.portifolio.PortifolioApplication;
+
 import br.com.portifolio.config.FlywayConfig;
+
 import br.com.portifolio.model.Pessoa;
 import br.com.portifolio.repository.PessoaRepository;
 import org.assertj.core.api.Assertions;
 import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.*;
+import java.util.logging.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.TestPropertySource;
@@ -20,14 +22,15 @@ import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(classes = PortifolioApplication.class)
-@AutoConfigureMockMvc
+@SpringBootTest
 @DisplayName("Teste para o repositório de pessoas.")
 @Import(FlywayConfig.class)
 @TestPropertySource(locations = "classpath:teste.properties")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class PessoaRepositoryTest {
+
+	private static final Logger LOGGER = Logger.getLogger(PessoaRepositoryTest.class.getName());
 
 	@Autowired
 	private PessoaRepository repository;
@@ -48,6 +51,9 @@ class PessoaRepositoryTest {
 		assertThat(pessoaSalva).isNotNull();
 		assertThat(pessoaSalva.getId()).isNotNull();
 		assertThat(pessoaSalva.getNome()).isEqualTo(pessoa.getNome());
+
+		LOGGER.info("Resultado: " + pessoaSalva);
+
 	}
 
 	@Test
@@ -61,6 +67,7 @@ class PessoaRepositoryTest {
 		assertThat(pessoaRecuperada).isPresent();
 		pessoaRecuperada.ifPresent(pessoa -> {
 			assertThat(pessoa.getId()).isEqualTo(pessoaSalva.getId());
+			LOGGER.info("Resultado: " + pessoa);
 		});
 	}
 
@@ -77,6 +84,8 @@ class PessoaRepositoryTest {
 			assertThat(pessoaAtualizada).isNotNull();
 			assertThat(pessoaAtualizada.getId()).isEqualTo(pessoa.getId());
 			assertThat(pessoaAtualizada.getNome()).isEqualTo("Thiago Atualizado");
+
+			LOGGER.info("Resultado: " + pessoaAtualizada);
 		});
 	}
 
@@ -96,12 +105,15 @@ class PessoaRepositoryTest {
 		Pessoa pessoaSalva = repository.save(factory.criarPessoa1());
 		Pessoa pessoaSalva2 = repository.save(factory.criarPessoa2());
 
-		ArrayList<Pessoa> listaResultado = new ArrayList<>();
-		listaResultado.add(pessoaSalva);
-		listaResultado.add(pessoaSalva2);
+		ArrayList<Pessoa> listaNovasPessoas= new ArrayList<>();
+		listaNovasPessoas.add(pessoaSalva);
+		listaNovasPessoas.add(pessoaSalva2);
 
-		List<Pessoa> lista = repository.findAll();
-		assertThat(lista).isEqualTo(listaResultado);
+		List<Pessoa> listaBanco = repository.findAll();
+		assertThat(listaBanco).isEqualTo(listaNovasPessoas);
+
+		LOGGER.info("Lista Novas Pessoas: " + listaNovasPessoas);
+		LOGGER.info("Lista Banco: " + listaBanco);
 	}
 
 	@Test
@@ -116,6 +128,6 @@ class PessoaRepositoryTest {
 
 	@AfterAll
 	void tearDown() {
-		//flyway.clean();
+		flyway.clean();
 	}
 }

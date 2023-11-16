@@ -12,11 +12,16 @@ public class Membro {
     private MembroId id;
 
     @ManyToOne
-    @JoinColumn(name = "idpessoa", referencedColumnName = "id", insertable = false, updatable = false)
+    @MapsId("idProjeto")
+    @JoinColumn(name = "idprojeto")
+    private Projeto projeto;
+
+    @ManyToOne
+    @MapsId("idPessoa")
+    @JoinColumn(name = "idpessoa")
     private Pessoa pessoa;
 
     public Membro(){
         this.id = new MembroId();
     }
-
 }

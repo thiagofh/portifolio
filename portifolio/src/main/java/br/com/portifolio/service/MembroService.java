@@ -39,7 +39,7 @@ public class MembroService {
     }
 
     public Optional<Membro> buscarMembroPorIdProjeto(Membro membro) {
-        return membroRepository.findByIdProjetoAndIdPessoa(membro.getId().getIdProjeto(), membro.getId().getIdPessoa());
+        return membroRepository.findById(membro.getId());
     }
 
     public Membro salvarMembro(Membro pMmembro) {
@@ -67,6 +67,6 @@ public class MembroService {
     }
 
     public void deletarMembroPorIdProjeto(Membro memo) {
-        membroRepository.deleteByIdProjetoAndIdPessoa(memo.getId().getIdProjeto(), memo.getId().getIdPessoa());
+        membroRepository.deleteById(memo.getId());
     }
 }
