@@ -30,12 +30,14 @@ public class Projeto {
     @Column(name = "descricao", length = 5000)
     private String descricao;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", length = 45)
     private StatusProjetoEnum status;
 
     @Column(name = "orcamento")
     private Float orcamento;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "risco", length = 45)
     private ClassificacaoRiscoEnum risco;
 

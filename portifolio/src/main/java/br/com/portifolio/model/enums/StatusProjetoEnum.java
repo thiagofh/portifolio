@@ -1,9 +1,9 @@
 package br.com.portifolio.model.enums;
 
 public enum StatusProjetoEnum{
-    EM_ANALISE("Em Análise"),
-    ANALISE_REALIZADA("Análise Realizada"),
-    ANALISE_APROVADA("Análise Aprovada"),
+    EM_ANALISE("Em Analise"),
+    ANALISE_REALIZADA("Analise Realizada"),
+    ANALISE_APROVADA("Analise Aprovada"),
     INICIADO("Iniciado"),
     PLANEJADO("Planejado"),
     EM_ANDAMENTO("Em Andamento"),

@@ -2,7 +2,7 @@ package br.com.portifolio.model.enums;
 
 public enum ClassificacaoRiscoEnum {
     BAIXO("Baixo"),
-    MEDIO("Médio"),
+    MEDIO("Medio"),
     ALTO("Alto");
 
     private final String descricao;
